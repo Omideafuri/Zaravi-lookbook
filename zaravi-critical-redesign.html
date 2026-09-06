@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head>
+<!-- skill:chrome -->
+<style>
+/* Credit line — bottom-right */
+.design-ui-credit {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  font: 11px/1 system-ui, sans-serif;
+  color: rgba(128,128,128,0.5);
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: opacity 0.4s ease;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+/* Hide chrome on touch devices */
+@media (hover: none) {
+  .design-ui-credit { display: none; }
+}
+
+/* Print fixes */
+@media print {
+  * {
+    transition: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+  }
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .design-ui-credit { display: none !important; }
+}
+
+</style>
+<script>
+(function () {
+    // Design-ui pages are single compositions, so the whole body is editable.
+    function markEditable() {
+        document.body.classList.add('artifact-editable');
+    }
+
+    // Credit badge with idle-fade. Hover devices only.
+    function initChromeUI() {
+        if (!matchMedia('(hover: hover)').matches) return;
+
+        var credit = document.createElement('div');
+        credit.className = 'design-ui-credit';
+        credit.setAttribute('aria-hidden', 'true');
+        credit.innerHTML = '\u{1F49C} by ClickUp Brain';
+        document.body.appendChild(credit);
+
+        var timer = null;
+        var fade = function (out) { credit.style.opacity = out ? '0' : ''; };
+        fade(true);
+        var show = function () {
+            fade(false);
+            clearTimeout(timer);
+            timer = setTimeout(function () { fade(true); }, 3000);
+        };
+        document.addEventListener('mousemove', show);
+        show();
+    }
+
+    function init() {
+        markEditable();
+        initChromeUI();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+
+</script>
+<!-- /skill:chrome --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ZARAVI, Critical Redesign</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet"><style>
+:root{--paper:oklch(95% .018 92);--ink:oklch(24% .028 58);--sage:oklch(64% .06 142);--oxide:oklch(54% .13 48);--chalk:oklch(88% .02 88);--olive:oklch(38% .045 140);--line:color-mix(in oklch,var(--ink) 22%,transparent);--serif:"Instrument Serif",serif;--sans:Manrope,sans-serif;--mono:"DM Mono",monospace;--ease:cubic-bezier(.16,1,.3,1)}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5}a{color:inherit;text-decoration:none}.wrap{padding-inline:clamp(20px,5vw,84px)}nav{height:72px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}.logo{font-family:var(--serif);font-size:25px;letter-spacing:.22em}.navnote{font:11px var(--mono);letter-spacing:.08em;text-transform:uppercase}.hero{min-height:78svh;display:grid;grid-template-columns:1.1fr .9fr;align-items:end;padding-top:100px;padding-bottom:48px}.hero h1{font:400 clamp(5rem,13vw,13rem)/.75 var(--serif);letter-spacing:-.055em;margin:0 0 30px -0.055em;max-width:7ch}.hero h1 i{font-size:.22em;letter-spacing:.03em;display:block;text-align:right;margin-right:.25em}.hero p{max-width:36ch;margin:0;font-size:1.15rem}.hero-visual{height:min(62vw,560px);background:var(--sage);position:relative;display:grid;place-items:center;overflow:hidden}.hero-visual:before,.hero-visual:after{content:"";position:absolute;border:1px solid var(--ink);border-radius:50% 45% 50% 42%;transform:rotate(26deg)}.hero-visual:before{width:56%;height:72%;left:11%;top:10%;clip-path:polygon(0 0,100% 8%,76% 56%,100% 100%,0 88%)}.hero-visual:after{width:56%;height:72%;right:11%;top:10%;clip-path:polygon(0 8%,100% 0,100% 88%,0 100%,24% 56%);transform:rotate(-26deg)}.axis{position:absolute;top:0;bottom:0;width:1px;background:var(--ink)}.hero-visual span{position:relative;z-index:2;font:11px var(--mono);letter-spacing:.14em;text-transform:uppercase;background:var(--sage);padding:10px}.kicker{font:11px var(--mono);text-transform:uppercase;letter-spacing:.14em;color:var(--oxide)}section{padding-block:clamp(80px,11vw,160px)}.sectionhead{display:grid;grid-template-columns:1fr 3fr;gap:30px;margin-bottom:64px}.sectionhead h2{font:400 clamp(3.2rem,7vw,7rem)/.82 var(--serif);letter-spacing:-.045em;margin:0}.sectionhead p{max-width:58ch;font-size:1.08rem}.audit{background:var(--ink);color:var(--paper)}.audit-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid color-mix(in oklch,var(--paper) 24%,transparent)}.audit-row{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid color-mix(in oklch,var(--paper) 24%,transparent)}.audit-row:nth-child(odd){padding-right:7vw}.audit-row:nth-child(even){padding-left:7vw;border-left:1px solid color-mix(in oklch,var(--paper) 24%,transparent)}.audit-row b{font:11px var(--mono);color:var(--oxide)}.audit-row h3{font-size:1.15rem;margin:0 0 3px}.audit-row p{margin:0;opacity:.72}.verdict{margin-top:72px;display:grid;grid-template-columns:1fr 2fr;gap:30px;border-top:1px solid color-mix(in oklch,var(--paper) 24%,transparent);padding-top:18px}.verdict strong{font:400 clamp(2rem,4vw,4rem)/.95 var(--serif)}.rebuild{background:var(--sage)}.rebuild-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.rebuild-panel{min-height:430px;padding:clamp(26px,5vw,64px);background:var(--paper);position:relative;overflow:hidden}.rebuild-panel.dark{background:var(--olive);color:var(--paper)}.rebuild-panel.oxide{background:var(--oxide);color:var(--paper)}.rebuild-panel h3{font:400 clamp(2.4rem,5vw,5rem)/.85 var(--serif);margin:20px 0 30px;max-width:7ch}.rebuild-panel p{max-width:32ch}.cut-line{position:absolute;inset:auto 0 74px;border-top:1px solid currentColor;transform:rotate(-11deg)}.cut-line:after{content:"";position:absolute;left:18%;right:18%;top:28px;border-top:1px solid currentColor}.sample-word{font:400 clamp(3rem,8vw,8rem)/.8 var(--serif);letter-spacing:.11em;text-align:center;margin-top:95px}.sample-word small{font:11px var(--mono);letter-spacing:.1em;display:block;text-align:right;margin-top:22px}.seal{width:170px;height:170px;border:1px solid currentColor;border-radius:50%;margin:86px auto 0;display:grid;place-items:center;position:relative}.seal:before,.seal:after{content:"";position:absolute;width:60px;height:96px;border:1px solid currentColor;border-radius:70% 20% 70% 20%;top:36px}.seal:before{left:20px;transform:rotate(24deg)}.seal:after{right:20px;transform:rotate(-24deg)}.seal span{font:10px var(--mono);letter-spacing:.12em;z-index:1}.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.rule{border-top:1px solid var(--line);padding-top:16px}.rule h3{font-size:1.2rem;margin:0 0 8px}.rule p{margin:0;max-width:32ch}.strike{color:var(--oxide);text-decoration:line-through;text-decoration-thickness:2px}.keep{color:var(--olive);font-weight:700}.production{background:var(--chalk)}.prod-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px}.prod-list{border-top:1px solid var(--line)}.prod-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:17px 0;border-bottom:1px solid var(--line)}.prod-row b{font-size:.8rem}.prod-row span{font-size:.82rem}.launch{background:var(--oxide);color:var(--paper)}.launch h2{font:400 clamp(4rem,10vw,11rem)/.77 var(--serif);letter-spacing:-.05em;margin:0;max-width:7ch}.launch-bottom{border-top:1px solid color-mix(in oklch,var(--paper) 30%,transparent);margin-top:100px;padding-top:18px;display:flex;justify-content:space-between;gap:30px}.launch-bottom p{max-width:45ch;margin:0}.small{font:11px var(--mono);letter-spacing:.1em;text-transform:uppercase}footer{padding-block:20px;font:11px var(--mono);display:flex;justify-content:space-between}@media(max-width:760px){.hero,.sectionhead,.verdict,.prod-grid{grid-template-columns:1fr}.hero-visual{height:70svh;margin-top:50px}.audit-grid,.rebuild-grid,.rules{grid-template-columns:1fr}.audit-row:nth-child(even){padding-left:0;border-left:0}.audit-row:nth-child(odd){padding-right:0}.launch-bottom{flex-direction:column}.navnote{display:none}}
+</style></head><body><div class="wrap"><nav><a class="logo" href="#top">ZARAVI</a><span class="navnote">Critical creative direction / 03.09.26</span></nav><main id="top"><header class="hero"><div><span class="kicker">Internal review / not for client presentation</span><h1>Cut the pretty.<i>Keep the evidence.</i></h1><p>The current system has a good mood but too many moodboard moves. This pass removes the decorative layer and makes one behavior impossible to confuse with another brand.</p></div><div class="hero-visual"><div class="axis"></div><span>New code: bilateral tension</span></div></header><section class="audit"><div class="sectionhead"><span class="kicker">01 / Audit</span><div><h2>What fails<br>under pressure.</h2><p>The identity currently reads as competent contemporary luxury, not as a house with an authored visual grammar. The danger is not ugliness. It is interchangeability.</p></div></div><div class="audit-grid"><div class="audit-row"><b>01</b><div><h3>Generic category palette</h3><p>Sage, ivory, brown and copper are attractive but currently behave like a tasteful moodboard. Without a proprietary ratio or use rule, any botanical lifestyle brand could borrow them.</p></div></div><div class="audit-row"><b>02</b><div><h3>Butterfly over-explained</h3><p>Emblem, veins, wings, pattern and emboss all say the same thing. Repetition makes the symbol decorative. A luxury code needs omission.</p></div></div><div class="audit-row"><b>03</b><div><h3>Typography is too obedient</h3><p>Bodoni plus Manrope is a familiar fashion pairing. The wordmark has no enough behavioral edge, so the brand leans on imagery to feel special.</p></div></div><div class="audit-row"><b>04</b><div><h3>Packaging is not yet engineered</h3><p>AI prototypes show impossible board behavior in places: oversized wing embosses, ambiguous hinges and inserts that look molded rather than specified. A beautiful render is not a manufacturing instruction.</p></div></div><div class="audit-row"><b>05</b><div><h3>Archive language is unearned</h3><p>“Archive”, “specimen” and “evidence” are strong words, but the system needs actual records, numbering logic, maker data and object history or the language becomes costume.</p></div></div><div class="audit-row"><b>06</b><div><h3>Digital is a moodboard, not a product</h3><p>The editorial website direction is convincing in a still image but under-specifies filtering, stock states, chain length, care, shipping and checkout trust.</p></div></div></div><div class="verdict"><span class="kicker">Creative verdict</span><strong>Keep the tension. Kill the abundance.</strong></div></section><section class="rebuild"><div class="sectionhead"><span class="kicker">02 / Rebuild the weakest 30%</span><div><h2>One symbol.<br>Three behaviors.</h2><p>We are not redesigning everything. We are removing the parts that dilute recognition and replacing them with a tighter visual engine.</p></div></div><div class="rebuild-grid"><article class="rebuild-panel"><span class="kicker">Wordmark / revision</span><div class="sample-word">ZARAVI<small>wide set / interrupted A / no monogram by default</small></div><div class="cut-line"></div><p><span class="strike">Add a Z monogram because luxury brands need one.</span><br><span class="keep">Use the wordmark as the primary object.</span> The A receives one controlled intervention: a low crossbar that echoes a fold without drawing a butterfly.</p></article><article class="rebuild-panel dark"><span class="kicker">Symbol / revision</span><div class="seal"><span>TURN<br>01.01</span></div><p><span class="strike">Use the full butterfly emblem on every touchpoint.</span><br><span class="keep">Reserve the bilateral mark for closures, certificates and object records.</span> No standalone butterfly on social tiles.</p></article><article class="rebuild-panel oxide"><span class="kicker">Color / revision</span><h3>Make copper rare.</h3><p><span class="strike">Copper as a second brand color</span><br><span class="keep">Copper as an event</span><br><br>Use sage and chalk for 85% of surfaces. Espresso carries text. Oxide Copper appears only on pull tabs, edition stamps and one campaign interruption. The restraint makes it ownable.</p></article><article class="rebuild-panel dark"><span class="kicker">Pattern / revision</span><h3>Replace wings with the seam.</h3><p><span class="strike">Decorative wing pattern</span><br><span class="keep">A single center seam, split and rejoined</span><br><br>The seam is the scalable code: packaging fold, website reveal, campaign crop, certificate rule and motion origin. The butterfly is implied by what parts company.</p><div class="cut-line"></div></article></div></section><section class="wrap"><div class="sectionhead"><span class="kicker">03 / New rules</span><div><h2>Fewer moves.<br>More memory.</h2><p>These are the rules that stop future work from drifting back into generic luxury.</p></div></div><div class="rules"><div class="rule"><h3>01 / Never illustrate the idea twice</h3><p>If the seam is carrying the butterfly, do not add a wing illustration beside it. <span class="keep">One cue per surface.</span></p></div><div class="rule"><h3>02 / Every archive claim needs evidence</h3><p>Object numbers must resolve to material, maker, date, edition and care data. <span class="keep">No poetic metadata without a record.</span></p></div><div class="rule"><h3>03 / Material beats effect</h3><p>Blind emboss, paper grain and tolerances do more brand work than foil, gradients or shadows. <span class="keep">Make the object prove the price.</span></p></div></div></section><section class="production"><div class="sectionhead"><span class="kicker">04 / Production correction</span><div><h2>What will fail<br>in the real world.</h2><p>The render language needs a harder production filter before any supplier sees it.</p></div></div><div class="prod-grid"><div class="prod-list"><div class="prod-row"><b>Wing emboss</b><span>Reduce to 0.25 mm minimum rule and keep 5 mm from edges. Full-wing emboss on small lids will muddy after wrapping.</span></div><div class="prod-row"><b>Rigid board</b><span>Approve one actual board lot before setting final drawer clearances. Nominal caliper is not finished caliper.</span></div><div class="prod-row"><b>Pull tab</b><span>Trap the anchor under the wrap or use a stitched reinforcement patch. Do not rely on adhesive alone.</span></div><div class="prod-row"><b>Necklace insert</b><span>Specify chain channel depth, pendant slot and anti-slip surface. “Plant suede” is not a specification.</span></div></div><div class="prod-list"><div class="prod-row"><b>Color</b><span>Approve under D50 and store a physical standard. Sage shifts badly between digital, dyed paper and textile.</span></div><div class="prod-row"><b>Logo</b><span>Do not trust generative renders for type. Supply vector artwork and inspect blind deboss at 10× loupe.</span></div><div class="prod-row"><b>Transit</b><span>Prototype inside the real mailer, then run six-face 1 m drop testing. Presentation packaging alone is not shipping packaging.</span></div><div class="prod-row"><b>Release gate</b><span>Three matched samples, one jewelry-fit review, one color review, one transit test, one supplier sign-off.</span></div></div></div></section><section class="launch"><div class="sectionhead"><span class="kicker">05 / The sharper launch</span><div><h2>Wear what<br>changed you.</h2><p>Keep the line. Change the proof. Launch with six numbered objects, one material story, one seam behavior, and a certificate that makes the archive real.</p></div></div><div class="launch-bottom"><p>Do not launch with a giant butterfly campaign. Launch with a close crop of a fold, a hand, a scratched surface and a record number. Let customers discover the wing after they recognize the behavior.</p><span class="small">Recommendation / proceed with revision</span></div></section></main><footer><span>ZARAVI / Critical redesign</span><span>Internal working document</span></footer></div></body></html>

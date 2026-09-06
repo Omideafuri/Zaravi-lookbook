@@ -1,0 +1,2263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZARAVI — Lookbook 2026 · Series I: Tension</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════
+   DESIGN SYSTEM TOKENS & COLOR RATIOS
+   Ivory 70% · Sage 20% · Brown 8% · Burnt Amber 2%
+══════════════════════════════════════════════════ */
+:root {
+  --ivory:       #F7F5EC;
+  --ivory-2:     #EEE9C1;
+  --ivory-trans: rgba(247, 245, 236, 0.94);
+  --sage:        #8DA28C;
+  --sage-dk:     #7A9279;
+  --sage-lk:     #A3B8A2;
+  --brown:       #3A230A;
+  --brown-lt:    #6B4A25;
+  --brown-dk:    #251502;
+  --orange:      #A4530C;
+  --orange-lt:   #C86714;
+
+  --serif: 'Cormorant Garamond', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  --mono:  'Space Mono', 'SF Mono', Consolas, monospace;
+  --easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--ivory);
+}
+
+body {
+  background: var(--ivory);
+  color: var(--brown);
+  font-family: var(--serif);
+  font-weight: 300;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--orange);
+  color: var(--ivory);
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+.spec {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  line-height: 2.1;
+  color: var(--brown);
+  opacity: 0.55;
+}
+
+.spec-light {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  line-height: 2.1;
+  color: var(--ivory);
+  opacity: 0.55;
+}
+
+.hairline {
+  width: 100%;
+  height: 0.5px;
+  background: var(--brown);
+  opacity: 0.15;
+}
+
+.grain-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  opacity: 0.03;
+  z-index: 999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ════════════════ NAVIGATION ════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 300;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 56px;
+  background: var(--ivory-trans);
+  border-bottom: 0.5px solid rgba(58, 35, 10, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.nav-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-logo {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.52em;
+  color: var(--brown);
+  font-weight: 400;
+}
+
+.nav-wing-mark {
+  opacity: 0.35;
+  transition: opacity 0.3s;
+}
+
+.nav-logo-group:hover .nav-wing-mark {
+  opacity: 0.85;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-link {
+  font-family: var(--mono);
+  font-size: 8.5px;
+  letter-spacing: 0.18em;
+  color: var(--brown);
+  opacity: 0.5;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.nav-link:hover { opacity: 1; }
+
+.nav-archive-btn {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  padding: 6px 14px;
+  border: 0.5px solid rgba(58, 35, 10, 0.25);
+  border-radius: 20px;
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  background: transparent;
+  cursor: pointer;
+  color: var(--brown);
+}
+
+.nav-archive-btn:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  background: rgba(164, 83, 12, 0.06);
+}
+
+.orange-pip {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--orange);
+  display: inline-block;
+}
+
+/* ════════════════ SECTION: COVER (ASYMMETRIC 55/45) ════════════════ */
+#cover {
+  min-height: 100vh;
+  padding-top: 64px;
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  position: relative;
+}
+
+.cover-left {
+  padding: 84px 64px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background: var(--ivory);
+}
+
+.cover-kicker {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.24em;
+  opacity: 0.45;
+  margin-bottom: 48px;
+}
+
+.cover-headline-wrap {
+  margin: auto 0;
+  padding: 30px 0;
+}
+
+.cover-headline {
+  font-size: clamp(60px, 7.5vw, 114px);
+  line-height: 0.92;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: -0.03em;
+  color: var(--brown);
+}
+
+.cover-tagline {
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--brown-lt);
+  opacity: 0.7;
+  margin-top: 18px;
+}
+
+.cover-right {
+  background: var(--sage);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.vein-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.08;
+}
+
+.cover-jewelry-stage {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 48px;
+  text-align: center;
+}
+
+.cover-jewelry-svg {
+  filter: drop-shadow(0 20px 36px rgba(37, 21, 2, 0.25));
+  transition: transform 0.6s var(--easing);
+}
+
+.cover-jewelry-svg:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.cover-caption {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  color: var(--ivory);
+  opacity: 0.65;
+  line-height: 2.2;
+}
+
+/* ════════════════ SECTION: ESSENCE ════════════════ */
+#essence {
+  padding: 150px 64px 110px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.essence-layout {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 90px;
+}
+
+.essence-index {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding-top: 14px;
+}
+
+.essence-index-num {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  opacity: 0.35;
+}
+
+.v-tick {
+  width: 0.5px;
+  height: 60px;
+  background: var(--brown);
+  opacity: 0.2;
+}
+
+.essence-index-label {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  opacity: 0.35;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  height: 110px;
+}
+
+.essence-pull {
+  font-size: clamp(36px, 4.4vw, 56px);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.18;
+  letter-spacing: -0.018em;
+  max-width: 780px;
+  color: var(--brown);
+  margin-bottom: 60px;
+}
+
+.values-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(58, 35, 10, 0.08);
+  border: 0.5px solid rgba(58, 35, 10, 0.08);
+}
+
+.value-cell {
+  background: var(--ivory);
+  padding: 44px 32px;
+  transition: background 0.3s;
+}
+
+.value-cell:hover { background: #FFFDF7; }
+.value-cell-alt { background: var(--ivory-2); }
+
+.value-num {
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.25em;
+  opacity: 0.35;
+  margin-bottom: 18px;
+}
+
+.value-title {
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--brown);
+  opacity: 0.85;
+}
+
+/* ════════════════ SECTION: COLLECTION ════════════════ */
+#collection {
+  background: var(--brown);
+  padding: 140px 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.collection-vein-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.04;
+}
+
+.collection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 1200px;
+  margin: 0 auto 72px;
+  position: relative;
+  z-index: 2;
+}
+
+.collection-title {
+  font-size: clamp(48px, 5.5vw, 76px);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ivory);
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+}
+
+.collection-meta { text-align: right; }
+.collection-meta p {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  color: var(--ivory);
+  opacity: 0.4;
+  line-height: 2.3;
+}
+
+.collection-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  position: relative;
+  z-index: 2;
+  background: rgba(247, 245, 236, 0.04);
+}
+
+.product-card {
+  background: var(--brown-dk);
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 3 / 4.3;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.4s var(--easing);
+}
+
+.product-card:hover {
+  background: #2D1A05;
+}
+
+.product-visual-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 36px 36px;
+}
+
+.product-svg {
+  width: 82%;
+  height: auto;
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.45));
+  transition: transform 0.5s var(--easing);
+}
+
+.product-card:hover .product-svg {
+  transform: scale(1.04) translateY(-4px);
+}
+
+.product-footer {
+  padding: 24px 28px 28px;
+  border-top: 0.5px solid rgba(247, 245, 236, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.p-num {
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.25em;
+  color: var(--ivory);
+  opacity: 0.25;
+  margin-bottom: 6px;
+}
+
+.p-name {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 20px;
+  color: var(--ivory);
+  letter-spacing: -0.015em;
+  margin-bottom: 8px;
+}
+
+.p-spec {
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.16em;
+  color: var(--ivory);
+  opacity: 0.38;
+  line-height: 1.9;
+}
+
+.inspect-trigger {
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.18em;
+  color: var(--orange-lt);
+  opacity: 0.8;
+  transition: all 0.3s;
+}
+
+.product-card:hover .inspect-trigger {
+  color: #E88E3C;
+}
+
+/* ════════════════ SECTION: PHILOSOPHY ════════════════ */
+#philosophy {
+  padding: 160px 64px;
+}
+
+.philosophy-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.philosophy-top {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 110px;
+  align-items: flex-start;
+  margin-bottom: 120px;
+}
+
+.philosophy-quote {
+  font-size: clamp(40px, 4.6vw, 68px);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--brown);
+}
+
+.philosophy-divider {
+  width: 0.5px;
+  height: 64px;
+  background: var(--brown);
+  opacity: 0.18;
+  margin-bottom: 32px;
+}
+
+.philosophy-label {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  opacity: 0.38;
+  margin-bottom: 18px;
+}
+
+.philosophy-text {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  line-height: 2.3;
+  opacity: 0.6;
+  max-width: 520px;
+}
+
+.origin-block {
+  background: var(--sage);
+  padding: 96px 84px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.origin-vein-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.07;
+}
+
+.origin-heading {
+  font-size: clamp(44px, 4.8vw, 70px);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ivory);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  margin-bottom: 32px;
+}
+
+.origin-body {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  line-height: 2.3;
+  color: var(--ivory);
+  opacity: 0.7;
+  max-width: 440px;
+}
+
+/* ════════════════ SECTION: WING SYSTEM ════════════════ */
+#wing-system {
+  padding: 160px 64px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wing-header { margin-bottom: 84px; }
+.wing-title {
+  font-size: clamp(48px, 5.2vw, 78px);
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+  max-width: 620px;
+}
+
+.wing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+.wing-cell {
+  padding: 56px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  min-height: 320px;
+  justify-content: space-between;
+}
+
+.wing-cell-ivory { background: var(--ivory-2); }
+.wing-cell-sage  { background: var(--sage); }
+.wing-cell-brown { background: var(--brown); }
+
+.wing-cell-label {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  line-height: 2.1;
+}
+
+.wing-cell-ivory .wing-cell-label { opacity: 0.5; color: var(--brown); }
+.wing-cell-sage  .wing-cell-label { opacity: 0.7; color: var(--ivory); }
+.wing-cell-brown .wing-cell-label { opacity: 0.5; color: var(--ivory); }
+
+.wing-sub-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+.wing-pattern-cell {
+  background: var(--ivory-2);
+  padding: 56px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+}
+
+.wing-macro-panel {
+  background: var(--sage-dk);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ════════════════ SECTION: MATERIALS & PALETTE ════════════════ */
+#materials {
+  background: var(--ivory-2);
+  padding: 160px 64px;
+}
+
+.materials-inner { max-width: 1200px; margin: 0 auto; }
+.materials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 72px;
+}
+
+.materials-title {
+  font-size: clamp(48px, 5vw, 76px);
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  line-height: 1.0;
+}
+
+.palette-row {
+  display: grid;
+  grid-template-columns: 7fr 2fr 0.8fr 0.2fr;
+  gap: 2px;
+  height: 90px;
+  margin-bottom: 8px;
+}
+
+.swatch {
+  display: flex;
+  align-items: flex-end;
+  padding: 16px 20px;
+}
+
+.swatch-label {
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.18em;
+  line-height: 1.9;
+}
+
+.sw-ivory  { background: var(--ivory); }
+.sw-sage   { background: var(--sage); }
+.sw-brown  { background: var(--brown); }
+.sw-orange { background: var(--orange); }
+
+.sw-ivory .swatch-label  { color: var(--brown); opacity: 0.6; }
+.sw-sage  .swatch-label  { color: var(--ivory); opacity: 0.7; }
+.sw-brown .swatch-label  { color: var(--ivory); opacity: 0.7; }
+.sw-orange .swatch-label { color: var(--ivory); opacity: 0.9; }
+
+.material-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-top: 24px;
+}
+
+.mat-spec {
+  background: var(--ivory);
+  padding: 38px 28px;
+}
+
+.mat-spec-alt { background: rgba(247, 245, 236, 0.7); }
+
+.mat-spec-title {
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.22em;
+  opacity: 0.38;
+  margin-bottom: 14px;
+}
+
+.mat-spec-val {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  opacity: 0.9;
+}
+
+/* ════════════════ SECTION: PACKAGING ════════════════ */
+#packaging {
+  padding: 160px 64px;
+}
+
+.packaging-inner { max-width: 1200px; margin: 0 auto; }
+.packaging-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 96px;
+}
+
+.packaging-title {
+  font-size: clamp(52px, 5.6vw, 84px);
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+  max-width: 680px;
+}
+
+.packaging-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.pkg-visual {
+  margin-bottom: 28px;
+  background: var(--ivory-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+  border: 0.5px solid rgba(58, 35, 10, 0.06);
+  transition: transform 0.5s var(--easing);
+}
+
+.pkg-item:hover .pkg-visual {
+  transform: translateY(-4px);
+}
+
+.pkg-name {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  opacity: 0.55;
+  margin-bottom: 12px;
+}
+
+.pkg-desc {
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.13em;
+  line-height: 2.2;
+  opacity: 0.45;
+}
+
+/* ════════════════ SECTION: EDITORIAL ════════════════ */
+#editorial { padding: 0; }
+
+.editorial-hero {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  min-height: 72vh;
+}
+
+.editorial-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 84px 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.editorial-panel.ep-sage { background: var(--sage); }
+.editorial-panel.ep-ivory { background: var(--ivory-2); }
+
+.editorial-pull {
+  font-size: clamp(32px, 3.4vw, 50px);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.ep-sage .editorial-pull { color: var(--ivory); }
+.ep-ivory .editorial-pull { color: var(--brown); }
+
+.editorial-credit {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  margin-top: 24px;
+  opacity: 0.5;
+}
+
+.ep-sage .editorial-credit { color: var(--ivory); }
+
+.editorial-sub {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  min-height: 44vh;
+}
+
+.es-dark {
+  background: var(--brown);
+  padding: 72px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.es-dark-text {
+  font-size: clamp(26px, 3vw, 42px);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ivory);
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+}
+
+.es-sage {
+  background: var(--sage-lk);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.es-orange {
+  background: var(--orange);
+  display: flex;
+  align-items: flex-end;
+  padding: 32px;
+}
+
+.es-orange-label {
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.22em;
+  color: var(--ivory);
+  opacity: 0.85;
+  line-height: 2.1;
+}
+
+/* ════════════════ SECTION: BRAND STORY ════════════════ */
+#story {
+  background: var(--brown);
+  padding: 190px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-vein-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.035;
+}
+
+.story-inner {
+  position: relative;
+  max-width: 840px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.story-sup {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.32em;
+  color: var(--ivory);
+  opacity: 0.35;
+  margin-bottom: 52px;
+}
+
+.orange-stroke {
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--orange);
+  margin: 0 auto 52px;
+}
+
+.story-quote {
+  font-size: clamp(32px, 4.2vw, 56px);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ivory);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  margin-bottom: 80px;
+}
+
+.story-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  text-align: left;
+  margin-top: 88px;
+  padding-top: 64px;
+  border-top: 0.5px solid rgba(247, 245, 236, 0.1);
+}
+
+.story-body-item p {
+  font-family: var(--mono);
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+  color: var(--ivory);
+  opacity: 0.5;
+  line-height: 2.35;
+}
+
+.story-body-item-title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ivory);
+  opacity: 0.65;
+  margin-bottom: 16px;
+}
+
+/* ════════════════ SECTION: CLOSING ════════════════ */
+#closing {
+  padding: 160px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 75vh;
+  position: relative;
+  background: var(--ivory);
+}
+
+.closing-left {
+  padding-right: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.closing-series {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.24em;
+  opacity: 0.4;
+  margin-bottom: 48px;
+}
+
+.closing-headline {
+  font-size: clamp(62px, 7.5vw, 108px);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: var(--brown);
+}
+
+.closing-details p {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  opacity: 0.45;
+  line-height: 2.3;
+}
+
+.closing-right {
+  border-left: 0.5px solid rgba(58, 35, 10, 0.12);
+  padding-left: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 60px;
+}
+
+.closing-contact-label {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  opacity: 0.35;
+  margin-bottom: 20px;
+}
+
+.closing-contact p {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  opacity: 0.7;
+  line-height: 2.3;
+}
+
+.closing-divider {
+  width: 0.5px;
+  height: 52px;
+  background: var(--brown);
+  opacity: 0.14;
+}
+
+/* ════════════════ FOOTER ════════════════ */
+footer {
+  background: var(--brown);
+  padding: 28px 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.5px solid rgba(247, 245, 236, 0.06);
+}
+
+footer span {
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.24em;
+  color: var(--ivory);
+  opacity: 0.35;
+}
+
+/* ════════════════ INSPECTOR MODAL ════════════════ */
+.inspector-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(37, 21, 2, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--easing);
+}
+
+.inspector-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.inspector-modal {
+  background: var(--ivory);
+  width: 90%;
+  max-width: 960px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 0.5px solid rgba(58, 35, 10, 0.15);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  position: relative;
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.5);
+}
+
+.modal-visual-side {
+  background: var(--sage);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.modal-spec-side {
+  padding: 60px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: transparent;
+  border: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--brown);
+  opacity: 0.5;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+}
+
+.modal-close-btn:hover {
+  opacity: 1;
+  color: var(--orange);
+}
+
+.modal-title {
+  font-size: 38px;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.modal-meta-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 28px 0;
+  padding: 24px 0;
+  border-top: 0.5px solid rgba(58, 35, 10, 0.1);
+  border-bottom: 0.5px solid rgba(58, 35, 10, 0.1);
+}
+
+.meta-item-label {
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.2em;
+  opacity: 0.4;
+  margin-bottom: 4px;
+}
+
+.meta-item-val {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  opacity: 0.85;
+}
+
+/* ════════════════ ARCHIVE DRAWER ════════════════ */
+.archive-drawer {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: min(680px, 94vw);
+  background: var(--ivory);
+  border-left: 0.5px solid rgba(58, 35, 10, 0.15);
+  box-shadow: -20px 0 50px rgba(0, 0, 0, 0.2);
+  z-index: 600;
+  transform: translateX(100%);
+  transition: transform 0.5s var(--easing);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.archive-drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  padding: 32px 40px;
+  border-bottom: 0.5px solid rgba(58, 35, 10, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: var(--ivory);
+  z-index: 10;
+}
+
+.drawer-body {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.archive-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.archive-card-img-wrap {
+  position: relative;
+  background: var(--ivory-2);
+  overflow: hidden;
+  border: 0.5px solid rgba(58, 35, 10, 0.1);
+}
+
+.archive-card-img-wrap img {
+  width: 100%;
+  height: auto;
+}
+
+.archive-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.archive-badge {
+  font-family: var(--mono);
+  font-size: 7.5px;
+  letter-spacing: 0.2em;
+  padding: 3px 8px;
+  background: rgba(164, 83, 12, 0.08);
+  color: var(--orange);
+  border-radius: 2px;
+}
+
+.archive-desc {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  line-height: 2.1;
+  opacity: 0.65;
+}
+
+@media (max-width: 1024px) {
+  nav { padding: 0 28px; }
+  #cover { grid-template-columns: 1fr; }
+  .cover-left { padding: 56px 28px; }
+  .cover-right { min-height: 70vh; }
+  .essence-layout { grid-template-columns: 1fr; gap: 40px; }
+  .values-row { grid-template-columns: 1fr 1fr; }
+  .collection-grid { grid-template-columns: 1fr 1fr; }
+  .philosophy-top { grid-template-columns: 1fr; gap: 56px; }
+  .origin-block { grid-template-columns: 1fr; padding: 64px 32px; }
+  .wing-grid { grid-template-columns: 1fr; }
+  .wing-sub-row { grid-template-columns: 1fr; }
+  .palette-row { grid-template-columns: 4fr 2fr 1fr 0.4fr; }
+  .material-specs-grid { grid-template-columns: 1fr 1fr; }
+  .packaging-layout { grid-template-columns: 1fr; }
+  .editorial-hero { grid-template-columns: 1fr; }
+  .editorial-sub { grid-template-columns: 1fr; }
+  .story-body-grid { grid-template-columns: 1fr; }
+  #closing { grid-template-columns: 1fr; }
+  .closing-left { padding-right: 0; padding-bottom: 56px; }
+  .closing-right { border-left: none; border-top: 0.5px solid rgba(58, 35, 10, 0.12); padding-left: 0; padding-top: 56px; }
+  .inspector-modal { grid-template-columns: 1fr; }
+  section, #essence, #wing-system, #materials, #philosophy, #packaging, #closing {
+    padding-left: 28px; padding-right: 28px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="grain-overlay"></div>
+
+<!-- ════════════════ NAVIGATION ════════════════ -->
+<nav>
+  <div class="nav-logo-group">
+    <a href="#cover" class="nav-logo">ZARAVI</a>
+    <svg class="nav-wing-mark" viewBox="0 0 72 24" width="56" height="18" fill="none" stroke="#3A230A" stroke-width="1.2" stroke-linecap="round">
+      <path d="M3 19 Q24 3 45 12 Q60 17 70 6" />
+    </svg>
+  </div>
+  
+  <div class="nav-links">
+    <a href="#essence" class="nav-link">Essence</a>
+    <a href="#collection" class="nav-link">Series I: Tension</a>
+    <a href="#philosophy" class="nav-link">Philosophy</a>
+    <a href="#wing-system" class="nav-link">Wing Architecture</a>
+    <a href="#packaging" class="nav-link">Packaging</a>
+    <a href="#story" class="nav-link">Origin</a>
+    
+    <button class="nav-archive-btn" onclick="toggleArchiveDrawer()">
+      <span class="orange-pip"></span>
+      <span>Evolution Archive</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ════════════════ SECTION: COVER ════════════════ -->
+<section id="cover">
+  <div class="cover-left">
+    <p class="cover-kicker">Lookbook · Series I: Tension · Edition of 2026</p>
+    
+    <div class="cover-headline-wrap">
+      <h1 class="cover-headline">Quiet<br>Metamorphosis</h1>
+      <p class="cover-tagline">Objects of permanent tension and silent flight.</p>
+    </div>
+
+    <div>
+      <div class="hairline" style="margin-bottom: 24px;"></div>
+      <p class="spec">ZARAVI High Jewelry &nbsp;·&nbsp; 18k Solid Gold &nbsp;·&nbsp; Sage Porphyry &nbsp;·&nbsp; 750‰</p>
+      <p class="spec">Architectural reduction from the biology of wing venation.</p>
+    </div>
+  </div>
+
+  <div class="cover-right">
+    <!-- Vein Structural Grid Background -->
+    <svg class="vein-bg" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#F7F5EC" stroke-width="0.55">
+      <path d="M280 420 L160 220 L320 140 L440 280 L360 490 Z"/>
+      <path d="M280 420 L90 340 L70 190 L210 110 L320 140"/>
+      <path d="M280 420 L140 560 L50 480 L70 340"/>
+      <path d="M280 420 L440 510 L480 390 L440 280"/>
+      <path d="M280 420 L370 190 L510 230 L540 370 L440 510"/>
+      <line x1="280" y1="420" x2="190" y2="40"/>
+      <line x1="280" y1="420" x2="520" y2="180"/>
+      <line x1="280" y1="420" x2="560" y2="580"/>
+      <line x1="280" y1="420" x2="40" y2="600"/>
+    </svg>
+
+    <div class="cover-jewelry-stage">
+      <!-- Master Artwork: The Apex Cuff (18k Solid Gold) -->
+      <svg class="cover-jewelry-svg" viewBox="0 0 380 260" width="320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F7E6B5" />
+            <stop offset="25%" stop-color="#DEB052" />
+            <stop offset="55%" stop-color="#BA8529" />
+            <stop offset="85%" stop-color="#DEB052" />
+            <stop offset="100%" stop-color="#805417" />
+          </linearGradient>
+          <linearGradient id="innerShade" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#55350F" />
+            <stop offset="100%" stop-color="#2D1A06" />
+          </linearGradient>
+        </defs>
+
+        <!-- Stone Shadow -->
+        <ellipse cx="190" cy="195" rx="145" ry="32" fill="#758B74" opacity="0.35"/>
+
+        <!-- Cuff Back Interior Wall -->
+        <path d="M80 135 C 80 85, 300 85, 300 135" fill="none" stroke="url(#innerShade)" stroke-width="26" stroke-linecap="round"/>
+        <text x="190" y="112" text-anchor="middle" font-family="'Space Mono', monospace" font-size="7.5" fill="#F7F5EC" opacity="0.45" letter-spacing="3">ZARAVI 18K</text>
+
+        <!-- Cuff Front Exterior Facet (Brushed Gold Heavy Architectural Body) -->
+        <path d="M68 135 C 68 190, 312 190, 312 135" fill="none" stroke="url(#goldSheen)" stroke-width="32" stroke-linecap="square"/>
+
+        <!-- Beveled Planar Highlights -->
+        <path d="M74 126 C 85 174, 295 174, 306 126" fill="none" stroke="#FFF0C8" stroke-width="2.5" opacity="0.6"/>
+        <path d="M62 144 C 75 198, 305 198, 318 144" fill="none" stroke="#7A4B13" stroke-width="2" opacity="0.5"/>
+
+        <!-- Terminal Open Gap -->
+        <rect x="174" y="90" width="32" height="96" fill="#8DA28C"/>
+        <rect x="174" y="90" width="3" height="96" fill="#3A230A" opacity="0.35"/>
+        <rect x="203" y="90" width="3" height="96" fill="#3A230A" opacity="0.35"/>
+      </svg>
+
+      <!-- Signature Asymmetric Wing Curve (Level 1 Mark) -->
+      <svg viewBox="0 0 200 60" width="160" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 44 Q58 10 124 28 Q162 38 192 16"
+          fill="none" stroke="#F7F5EC" stroke-width="1.6" stroke-linecap="round" opacity="0.75"/>
+      </svg>
+
+      <p class="cover-caption">The Apex Cuff<br>Solid 18k Gold · 68 Grams · Brushed Satin · Open Form</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SECTION: ESSENCE ════════════════ -->
+<section id="essence">
+  <div class="essence-layout">
+    <div class="essence-index">
+      <span class="essence-index-num">I</span>
+      <div class="v-tick"></div>
+      <span class="essence-index-label">Brand Essence</span>
+    </div>
+    
+    <div>
+      <p class="essence-pull">
+        True luxury requires silence.<br>
+        We do not decorate the body.<br>
+        We anchor it.
+      </p>
+      <div class="hairline"></div>
+    </div>
+  </div>
+
+  <div class="values-row">
+    <div class="value-cell">
+      <p class="value-num">01 / 04</p>
+      <p class="value-title">Subtraction<br>over addition</p>
+    </div>
+    <div class="value-cell value-cell-alt">
+      <p class="value-num">02 / 04</p>
+      <p class="value-title">Tactility<br>over gloss</p>
+    </div>
+    <div class="value-cell">
+      <p class="value-num">03 / 04</p>
+      <p class="value-title">Permanence<br>over trend</p>
+    </div>
+    <div class="value-cell value-cell-alt">
+      <p class="value-num">04 / 04</p>
+      <p class="value-title">Structure<br>over decoration</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SECTION: COLLECTION (SERIES I) ════════════════ -->
+<section id="collection">
+  <svg class="collection-vein-layer" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#F7F5EC" stroke-width="0.5">
+    <path d="M0 380 L240 180 L540 120 L860 220 L1080 130 L1200 280"/>
+    <path d="M0 380 L240 620 L540 670 L860 560 L1080 660 L1200 520"/>
+  </svg>
+
+  <div class="collection-header">
+    <h2 class="collection-title">Series I<br><em>Tension</em></h2>
+    <div class="collection-meta">
+      <p>Six Sculptural Works</p>
+      <p>18k Solid Yellow Gold (750‰)</p>
+      <p>Edition of 2026 · Limited</p>
+    </div>
+  </div>
+
+  <div class="collection-grid">
+
+    <!-- 01: The Apex Cuff -->
+    <div class="product-card" onclick="openInspector('apex')">
+      <div class="product-visual-wrap">
+        <svg class="product-svg" viewBox="0 0 240 190" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="120" cy="105" rx="92" ry="28" fill="none" stroke="#C6923A" stroke-width="26"/>
+          <ellipse cx="120" cy="105" rx="92" ry="28" fill="none" stroke="#F3DB98" stroke-width="3" opacity="0.55"/>
+          <rect x="105" y="74" width="30" height="62" fill="#251502"/>
+          <rect x="105" y="74" width="2.5" height="62" fill="#7A4A12" opacity="0.4"/>
+          <rect x="132.5" y="74" width="2.5" height="62" fill="#7A4A12" opacity="0.4"/>
+          <path d="M80 102 Q120 90 160 102" fill="none" stroke="#F7F5EC" stroke-width="0.6" opacity="0.25"/>
+        </svg>
+      </div>
+      <div class="product-footer">
+        <div>
+          <p class="p-num">01</p>
+          <p class="p-name">The Apex Cuff</p>
+          <p class="p-spec">18k Solid Gold · 68g<br>Brushed finish · Open form</p>
+        </div>
+        <span class="inspect-trigger">Inspect →</span>
+      </div>
+    </div>
+
+    <!-- 02: The Radial Ring -->
+    <div class="product-card" onclick="openInspector('radial')">
+      <div class="product-visual-wrap">
+        <svg class="product-svg" viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="110" cy="95" rx="68" ry="22" fill="none" stroke="#C6923A" stroke-width="18"/>
+          <ellipse cx="110" cy="95" rx="68" ry="22" fill="none" stroke="#F3DB98" stroke-width="2.5" opacity="0.45"/>
+          <ellipse cx="110" cy="74" rx="14" ry="7" fill="#8DA28C"/>
+          <ellipse cx="110" cy="74" rx="10" ry="4.5" fill="#A3B8A2" opacity="0.8"/>
+        </svg>
+      </div>
+      <div class="product-footer">
+        <div>
+          <p class="p-num">02</p>
+          <p class="p-name">The Radial Ring</p>
+          <p class="p-spec">18k Solid Gold · 42g<br>Sage stone inset · Micro-etched</p>
+        </div>
+        <span class="inspect-trigger">Inspect →</span>
+      </div>
+    </div>
+
+    <!-- 03: The Dihedral Pendant -->
+    <div class="product-card" onclick="openInspector('dihedral')">
+      <div class="product-visual-wrap">
+        <svg class="product-svg" viewBox="0 0 200 230" xmlns="http://www.w3.org/2000/svg">
+          <line x1="100" y1="16" x2="100" y2="72" stroke="#BA8529" stroke-width="1.2" opacity="0.6"/>
+          <polygon points="100,74 140,132 100,156 60,132" fill="#251502" stroke="#C6923A" stroke-width="2.6"/>
+          <path d="M60 132 Q100 114 140 132" fill="none" stroke="#F3DB98" stroke-width="1" opacity="0.5"/>
+          <ellipse cx="100" cy="114" rx="12" ry="8" fill="#EEE9C1" opacity="0.45"/>
+        </svg>
+      </div>
+      <div class="product-footer">
+        <div>
+          <p class="p-num">03</p>
+          <p class="p-name">The Dihedral Pendant</p>
+          <p class="p-spec">18k Solid Gold · 18g<br>60cm box chain · Ivory stone</p>
+        </div>
+        <span class="inspect-trigger">Inspect →</span>
+      </div>
+    </div>
+
+    <!-- 04: The Chitin Chain -->
+    <div class="product-card" onclick="openInspector('chitin')">
+      <div class="product-visual-wrap">
+        <svg class="product-svg" viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="#C6923A" stroke-width="4.5" stroke-linecap="round">
+            <rect x="16" y="80" width="32" height="20" rx="9"/>
+            <rect x="52" y="80" width="32" height="20" rx="9" transform="rotate(18 68 90)"/>
+            <rect x="88" y="78" width="32" height="20" rx="9"/>
+            <rect x="122" y="80" width="32" height="20" rx="9" transform="rotate(-16 138 90)"/>
+            <rect x="156" y="80" width="32" height="20" rx="9" transform="rotate(12 172 90)"/>
+            <rect x="190" y="80" width="32" height="20" rx="9"/>
+          </g>
+        </svg>
+      </div>
+      <div class="product-footer">
+        <div>
+          <p class="p-num">04</p>
+          <p class="p-name">The Chitin Chain</p>
+          <p class="p-spec">18k Solid Gold · 34g<br>Articulated link · 42cm</p>
+        </div>
+        <span class="inspect-trigger">Inspect →</span>
+      </div>
+    </div>
+
+    <!-- 05: The Costal Cuff -->
+    <div class="product-card" onclick="openInspector('costal')">
+      <div class="product-visual-wrap">
+        <svg class="product-svg" viewBox="0 0 240 190" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="120" cy="86" rx="88" ry="22" fill="none" stroke="#C6923A" stroke-width="10"/>
+          <ellipse cx="120" cy="86" rx="88" ry="22" fill="none" stroke="#F3DB98" stroke-width="1.6" opacity="0.45"/>
+          <ellipse cx="120" cy="118" rx="88" ry="22" fill="none" stroke="#C6923A" stroke-width="10"/>
+          <ellipse cx="120" cy="118" rx="88" ry="22" fill="none" stroke="#F3DB98" stroke-width="1.6" opacity="0.45"/>
+          <line x1="32" y1="86" x2="32" y2="118" stroke="#C6923A" stroke-width="10"/>
+          <line x1="208" y1="86" x2="208" y2="118" stroke="#C6923A" stroke-width="10"/>
+        </svg>
+      </div>
+      <div class="product-footer">
+        <div>
+          <p class="p-num">05</p>
+          <p class="p-name">The Costal Cuff</p>
+          <p class="p-spec">18k Solid Gold · 54g<br>Twin band · Transverse bridge</p>
+        </div>
+        <span class="inspect-trigger">Inspect →</span>
+      </div>
+    </div>
+
+    <!-- 06: The Venation Earring -->
+    <div class="product-card" onclick="openInspector('venation')">
+      <div class="product-visual-wrap">
+        <svg class="product-svg" viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="86" cy="80" r="28" fill="none" stroke="#C6923A" stroke-width="3.8"/>
+          <path d="M66 72 Q86 56 106 74 Q86 84 66 72" fill="none" stroke="#DEB052" stroke-width="1" opacity="0.55"/>
+          <line x1="86" y1="108" x2="86" y2="134" stroke="#BA8529" stroke-width="1.6" opacity="0.5"/>
+          <circle cx="150" cy="94" r="19" fill="none" stroke="#C6923A" stroke-width="2.8" opacity="0.7"/>
+          <line x1="150" y1="113" x2="150" y2="132" stroke="#BA8529" stroke-width="1.2" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="product-footer">
+        <div>
+          <p class="p-num">06</p>
+          <p class="p-name">The Venation Ear</p>
+          <p class="p-spec">18k Solid Gold · 6g pair<br>Press-fit stud · Asymmetric set</p>
+        </div>
+        <span class="inspect-trigger">Inspect →</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════ SECTION: PHILOSOPHY ════════════════ -->
+<section id="philosophy">
+  <div class="philosophy-inner">
+    <div class="philosophy-top">
+      <div>
+        <p class="philosophy-quote">
+          We do not imitate nature.<br>
+          We abstract<br>its engineering.
+        </p>
+      </div>
+      <div>
+        <div class="philosophy-divider"></div>
+        <p class="philosophy-label">The origin</p>
+        <p class="philosophy-text">
+          A single butterfly wing observed under a macro lens—not as decorative ornament, but as pure architecture. A lattice of non-uniform veins distributing flight tension across an impossibly thin membrane. This structural logic is translated into solid 18k gold: the fragile mathematics of flight made permanent in precious metal.
+        </p>
+        <div style="height: 48px;"></div>
+        <p class="philosophy-label">The method</p>
+        <p class="philosophy-text">
+          Every ZARAVI piece begins with radical subtraction. We remove ornament until only the essential tension remains—the singular curve that cannot be further simplified without relinquishing its structural soul.
+        </p>
+      </div>
+    </div>
+
+    <!-- Origin Block (Full-bleed Sage) -->
+    <div class="origin-block">
+      <svg class="origin-vein-overlay" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#F7F5EC" stroke-width="0.55">
+        <path d="M0 200 L200 100 L400 150 L600 80 L800 200"/>
+        <path d="M0 200 L200 300 L400 250 L600 320 L800 200"/>
+        <line x1="200" y1="100" x2="200" y2="300"/>
+        <line x1="400" y1="80" x2="400" y2="320"/>
+      </svg>
+
+      <div>
+        <h3 class="origin-heading">The wing<br>is architecture.</h3>
+        <p class="origin-body">
+          When the wing is cropped beyond recognition, it ceases to be an insect's appendage. It becomes an engineering diagram drafted by millions of years of aerodynamic evolution—a tension grid distributing load across space.
+        </p>
+      </div>
+
+      <div style="display:flex; justify-content:center; align-items:center;">
+        <svg viewBox="0 0 400 300" width="340" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="#F7F5EC" stroke-width="0.75" opacity="0.65">
+            <path d="M40 240 Q60 140 160 80 Q260 30 350 90 Q390 130 370 200 Q340 260 250 280 Q150 300 40 240 Z" stroke-width="1.4" opacity="0.4"/>
+            <path d="M40 240 L160 80"/>
+            <path d="M40 240 L260 30"/>
+            <path d="M40 240 L350 90"/>
+            <path d="M110 165 Q180 140 250 145"/>
+            <path d="M80 205 Q160 185 240 185 Q300 185 360 170"/>
+            <path d="M60 228 Q160 215 270 220"/>
+          </g>
+          <!-- Single Burnt Amber Accent Vein (2% Color Allocation) -->
+          <path d="M40 240 Q210 95 350 90" fill="none" stroke="#A4530C" stroke-width="1.3" opacity="0.8"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SECTION: WING SYSTEM ════════════════ -->
+<section id="wing-system">
+  <div class="wing-header">
+    <h2 class="wing-title">The wing<br>as language.</h2>
+  </div>
+
+  <div class="wing-grid">
+    <!-- Level 1: Primary Mark -->
+    <div class="wing-cell wing-cell-ivory">
+      <svg viewBox="0 0 240 72" width="200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 54 Q55 10 130 28 Q175 40 230 14"
+          fill="none" stroke="#3A230A" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <p class="wing-cell-label">Level 1 — Primary Wing Mark<br>The abstract leading edge curve.<br>Used at brand scale and architectural fascia.</p>
+    </div>
+
+    <!-- Level 2: Vein System -->
+    <div class="wing-cell wing-cell-sage">
+      <svg viewBox="0 0 240 160" width="200" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#F7F5EC" stroke-width="0.75" opacity="0.7">
+          <path d="M20 130 L80 50 L160 30 L220 70 L200 130 L120 150 Z"/>
+          <path d="M80 50 L120 150"/>
+          <path d="M160 30 L120 150"/>
+          <path d="M20 130 L120 90 L220 70"/>
+        </g>
+      </svg>
+      <p class="wing-cell-label">Level 2 — Vein Geometry<br>Structural cell mesh system.<br>Blind deboss on rigid packaging boards.</p>
+    </div>
+
+    <!-- Level 3: Micro Monogram -->
+    <div class="wing-cell wing-cell-brown">
+      <svg viewBox="0 0 180 180" width="130" xmlns="http://www.w3.org/2000/svg">
+        <text x="20" y="140" font-family="'Cormorant Garamond', serif" font-size="140" fill="#F7F5EC" opacity="0.9" font-weight="300" font-style="italic">Z</text>
+        <line x1="12" y1="48" x2="160" y2="150" stroke="#A4530C" stroke-width="1.4" opacity="0.85"/>
+      </svg>
+      <p class="wing-cell-label">Level 3 — Z Monogram<br>Bisected by vein tension hairline.<br>Interior hallmark, jewelry punch, seal.</p>
+    </div>
+  </div>
+
+  <div class="wing-sub-row">
+    <!-- Level 4: Grid Pattern -->
+    <div class="wing-pattern-cell">
+      <svg viewBox="0 0 200 180" width="180" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#3A230A" stroke-width="0.45" opacity="0.35">
+          <path d="M0 90 L50 18 L100 0 L150 18 L200 90 L150 162 L100 180 L50 162 Z"/>
+          <path d="M50 18 L100 90 L150 18"/>
+          <path d="M50 162 L100 90 L150 162"/>
+          <line x1="0" y1="90" x2="200" y2="90"/>
+          <line x1="100" y1="0" x2="100" y2="180"/>
+        </g>
+      </svg>
+      <p class="wing-cell-label">Level 4 — Vein Grid Pattern<br>Stationery lining, acid-free tissue paper.</p>
+    </div>
+
+    <!-- Full-bleed Macro Wing Panel -->
+    <div class="wing-macro-panel">
+      <svg viewBox="0 0 520 220" width="460" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none">
+          <path d="M-20 190 Q80 60 260 40 Q400 20 540 80" stroke="#F7F5EC" stroke-width="1.6" opacity="0.45"/>
+          <path d="M-20 190 L190 40" stroke="#F7F5EC" stroke-width="0.6" opacity="0.25"/>
+          <path d="M-20 190 L320 30" stroke="#F7F5EC" stroke-width="0.6" opacity="0.25"/>
+          <!-- Burnt Amber Accent Vein -->
+          <path d="M160 105 Q260 85 380 110" stroke="#A4530C" stroke-width="1.2" opacity="0.65"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SECTION: MATERIALS & PALETTE ════════════════ -->
+<section id="materials">
+  <div class="materials-inner">
+    <div class="materials-header">
+      <h2 class="materials-title">The palette.</h2>
+      <p class="spec" style="text-align:right;">Four biological pigments.<br>One rigorous ratio.<br>Zero ornament.</p>
+    </div>
+
+    <div class="palette-row">
+      <div class="swatch sw-ivory">
+        <p class="swatch-label">Warm Ivory<br>#F7F5EC &nbsp;70%</p>
+      </div>
+      <div class="swatch sw-sage">
+        <p class="swatch-label">Sage Green<br>#8DA28C &nbsp;20%</p>
+      </div>
+      <div class="swatch sw-brown">
+        <p class="swatch-label">Deep Brown<br>#3A230A &nbsp;8%</p>
+      </div>
+      <div class="swatch sw-orange"></div>
+    </div>
+    <p class="spec" style="text-align:right; margin-top:8px;">Burnt Amber #A4530C · 2% Punctuation Only</p>
+
+    <div class="material-specs-grid">
+      <div class="mat-spec">
+        <p class="mat-spec-title">Precious Metal</p>
+        <p class="mat-spec-val">18k Solid Gold (750‰)</p>
+      </div>
+      <div class="mat-spec mat-spec-alt">
+        <p class="mat-spec-title">Surface Finish</p>
+        <p class="mat-spec-val">Brushed Satin Matte</p>
+      </div>
+      <div class="mat-spec">
+        <p class="mat-spec-title">Paper Stock</p>
+        <p class="mat-spec-val">Gmund Cotton 450gsm</p>
+      </div>
+      <div class="mat-spec mat-spec-alt">
+        <p class="mat-spec-title">Enclosure Board</p>
+        <p class="mat-spec-val">1200gsm Sage Rigid Pulp</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SECTION: PACKAGING ════════════════ -->
+<section id="packaging">
+  <div class="packaging-inner">
+    <div class="packaging-header">
+      <div>
+        <p class="spec" style="margin-bottom:12px;">Packaging Architecture · v2 Evolution</p>
+        <h2 class="packaging-title">Calm surface.<br>One detail.</h2>
+      </div>
+      <p class="spec" style="text-align:right; max-width:320px;">Moving past photographic wing wallpaper to architectural silence, blind debossing, and tactile unbleached linen.</p>
+    </div>
+
+    <div class="packaging-layout">
+
+      <!-- The Signature Box -->
+      <div class="pkg-item">
+        <div class="pkg-visual">
+          <svg viewBox="0 0 340 320" width="280" xmlns="http://www.w3.org/2000/svg">
+            <rect x="35" y="65" width="235" height="215" fill="#8DA28C" rx="1.5"/>
+            <!-- Blind Debossed Vein Grid -->
+            <g fill="none" stroke="#7A9279" stroke-width="0.5" opacity="0.65">
+              <line x1="35" y1="105" x2="270" y2="105"/>
+              <line x1="35" y1="145" x2="270" y2="145"/>
+              <line x1="35" y1="185" x2="270" y2="185"/>
+              <line x1="35" y1="225" x2="270" y2="225"/>
+              <line x1="75" y1="65" x2="75" y2="280"/>
+              <line x1="115" y1="65" x2="115" y2="280"/>
+              <line x1="155" y1="65" x2="155" y2="280"/>
+              <line x1="195" y1="65" x2="195" y2="280"/>
+              <line x1="235" y1="65" x2="235" y2="280"/>
+            </g>
+            <text x="152" y="180" text-anchor="middle" font-family="'Space Mono', monospace" font-size="10" fill="#6A8269" letter-spacing="6">ZARAVI</text>
+            <!-- Single Burnt Amber Ribbon (2%) -->
+            <rect x="141" y="65" width="22" height="215" fill="#A4530C" opacity="0.85"/>
+            <!-- Perspective Lid Lip -->
+            <path d="M35 65 L55 45 L290 45 L270 65 Z" fill="#9DB49C"/>
+            <path d="M270 65 L290 45 L290 260 L270 280 Z" fill="#728A71" opacity="0.75"/>
+          </svg>
+        </div>
+        <p class="pkg-name">01 / The Signature Box</p>
+        <p class="pkg-desc">
+          Sage rigid board · 1200gsm<br>
+          Wing vein grid — blind deboss (no ink)<br>
+          Burnt Orange ribbon · 3/8" matte grosgrain<br>
+          Friction-fit lid · Zero magnets · Zero plastic
+        </p>
+      </div>
+
+      <!-- The Inner Pouch -->
+      <div class="pkg-item">
+        <div class="pkg-visual">
+          <svg viewBox="0 0 200 230" width="165" xmlns="http://www.w3.org/2000/svg">
+            <rect x="35" y="46" width="130" height="160" rx="3" fill="#D8C8A4" opacity="0.9"/>
+            <g fill="none" stroke="#C8B892" stroke-width="0.4" opacity="0.55">
+              <line x1="35" y1="70" x2="165" y2="70"/>
+              <line x1="35" y1="100" x2="165" y2="100"/>
+              <line x1="35" y1="130" x2="165" y2="130"/>
+              <line x1="35" y1="160" x2="165" y2="160"/>
+              <line x1="35" y1="190" x2="165" y2="190"/>
+              <line x1="65" y1="46" x2="65" y2="206"/>
+              <line x1="100" y1="46" x2="100" y2="206"/>
+              <line x1="135" y1="46" x2="135" y2="206"/>
+            </g>
+            <text x="100" y="146" text-anchor="middle" font-family="'Space Mono', monospace" font-size="8" fill="#3A230A" letter-spacing="4" opacity="0.45">ZARAVI</text>
+            <!-- Single Burnt Amber Corner Stitch -->
+            <circle cx="43" cy="198" r="3.5" fill="#A4530C"/>
+            <path d="M43 198 L56 185" stroke="#A4530C" stroke-width="1.4"/>
+            <line x1="85" y1="34" x2="85" y2="16" stroke="#8B7355" stroke-width="1.5" opacity="0.5"/>
+            <line x1="115" y1="34" x2="115" y2="16" stroke="#8B7355" stroke-width="1.5" opacity="0.5"/>
+          </svg>
+        </div>
+        <p class="pkg-name">02 / The Inner Pouch</p>
+        <p class="pkg-desc">
+          Unbleached raw woven linen (Ref. Image 4)<br>
+          Single Burnt Orange stitch at lower corner<br>
+          No synthetic velvet · No microfiber suede<br>
+          Natural unbleached hemp drawstring
+        </p>
+      </div>
+
+      <!-- The Care Card -->
+      <div class="pkg-item">
+        <div class="pkg-visual" style="flex-direction:column; gap:16px;">
+          <svg viewBox="0 0 140 220" width="115" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="10" width="116" height="200" rx="1.5" fill="#EEE9C1" stroke="#3A230A" stroke-width="0.4" opacity="0.85"/>
+            <line x1="22" y1="44" x2="118" y2="44" stroke="#3A230A" stroke-width="0.35" opacity="0.2"/>
+            <text x="70" y="32" text-anchor="middle" font-family="'Space Mono', monospace" font-size="7" fill="#3A230A" letter-spacing="4" opacity="0.5">ZARAVI</text>
+            <rect x="22" y="56" width="48" height="3" rx="1" fill="#3A230A" opacity="0.14"/>
+            <rect x="22" y="66" width="76" height="2" rx="1" fill="#3A230A" opacity="0.08"/>
+            <rect x="22" y="74" width="68" height="2" rx="1" fill="#3A230A" opacity="0.08"/>
+            <path d="M24 178 Q70 166 116 172" fill="none" stroke="#3A230A" stroke-width="0.8" opacity="0.25"/>
+            <circle cx="70" cy="202" r="2.5" fill="none" stroke="#3A230A" stroke-width="0.5" opacity="0.35"/>
+          </svg>
+        </div>
+        <p class="pkg-name">03 / The Care Certificate</p>
+        <p class="pkg-desc">
+          Sage cotton rag stock · Tall vertical format<br>
+          Space Mono 7pt · Deep Brown ink<br>
+          Blind wing mark at bottom margin<br>
+          Single unbleached brown linen binding thread
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SECTION: EDITORIAL ════════════════ -->
+<section id="editorial">
+  <div class="editorial-hero">
+    <!-- Sage Editorial Panel -->
+    <div class="editorial-panel ep-sage">
+      <svg style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none;" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#F7F5EC" stroke-width="0.5" opacity="0.09">
+        <path d="M-40 420 Q150 100 400 60 Q520 40 640 120"/>
+        <path d="M-40 420 L300 60"/>
+      </svg>
+      
+      <!-- Jewelry on Stone Slab (Homage to Ref. Image 2) -->
+      <svg viewBox="0 0 360 260" width="70%" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-55%); opacity:0.85;" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="40,160 180,135 320,165 300,225 160,240 25,210" fill="#7A9279" opacity="0.45"/>
+        <ellipse cx="180" cy="180" rx="55" ry="16" fill="none" stroke="#C6923A" stroke-width="16"/>
+        <ellipse cx="180" cy="180" rx="55" ry="16" fill="none" stroke="#F3DB98" stroke-width="2.5" opacity="0.45"/>
+      </svg>
+
+      <div style="position:relative; z-index:2;">
+        <p class="editorial-pull">The metal must look<br>heavy and real.</p>
+        <p class="editorial-credit">The Radial Ring · Photographed on porous sage porphyry</p>
+      </div>
+    </div>
+
+    <!-- Ivory Typography Panel -->
+    <div class="editorial-panel ep-ivory">
+      <svg viewBox="0 0 100 30" width="60" style="position:absolute; top:64px; left:64px; opacity:0.15;" fill="none" stroke="#3A230A" stroke-width="1.2" stroke-linecap="round">
+        <path d="M3 22 Q28 4 62 12 Q82 17 97 6"/>
+      </svg>
+
+      <div>
+        <p style="font-size:clamp(38px, 4.2vw, 56px); font-style:italic; font-weight:300; line-height:1.08; letter-spacing:-0.02em; color:var(--brown);">
+          A fraction<br>of a second,<br>held forever.
+        </p>
+        <div style="width:28px; height:1px; background:var(--orange); margin-top:36px;"></div>
+        <p class="spec" style="margin-top:16px;">Packaging interior inscription · ZARAVI 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="editorial-sub">
+    <div class="es-dark">
+      <p class="es-dark-text">
+        She wasn't rescued.<br>
+        She transformed herself.
+      </p>
+    </div>
+    
+    <div class="es-sage">
+      <svg viewBox="0 0 110 76" width="84" fill="none" stroke="#F7F5EC" stroke-width="1.6" stroke-linecap="round" opacity="0.65">
+        <path d="M6 58 Q36 10 72 26 Q92 36 104 18" />
+      </svg>
+    </div>
+
+    <div class="es-orange">
+      <p class="es-orange-label">The flash<br>of a wing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SECTION: BRAND STORY ════════════════ -->
+<section id="story">
+  <svg class="story-vein-bg" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#F7F5EC" stroke-width="0.6">
+    <path d="M0 350 Q200 150 600 200 Q900 240 1200 100"/>
+    <path d="M0 350 Q200 550 600 500 Q900 460 1200 600"/>
+    <line x1="300" y1="0" x2="320" y2="700"/>
+    <line x1="600" y1="0" x2="620" y2="700"/>
+    <line x1="900" y1="0" x2="920" y2="700"/>
+  </svg>
+
+  <div class="story-inner">
+    <p class="story-sup">Brand Origin &amp; Manifesto · 2026</p>
+    <span class="orange-stroke"></span>
+    
+    <p class="story-quote">
+      True luxury requires silence.<br>
+      ZARAVI was founded on the belief<br>
+      that profound beauty is found not<br>
+      in decoration, but in structure.
+    </p>
+
+    <div style="display:flex; align-items:center; justify-content:center; gap:24px; opacity:0.25; margin-bottom:16px;">
+      <div style="width:48px; height:0.5px; background:var(--ivory);"></div>
+      <svg viewBox="0 0 140 44" width="100" fill="none" stroke="#F7F5EC" stroke-width="1.3" stroke-linecap="round">
+        <path d="M4 34 Q38 6 82 18 Q112 26 136 10"/>
+      </svg>
+      <div style="width:48px; height:0.5px; background:var(--ivory);"></div>
+    </div>
+
+    <div class="story-body-grid">
+      <div class="story-body-item">
+        <p class="story-body-item-title">The origin</p>
+        <p>A single butterfly wing observed under a macro lens — not as ornament, but as architecture. A grid of veins distributing tension across an impossibly thin membrane. The fragile engineering of flight, made permanent in solid precious metal.</p>
+      </div>
+      <div class="story-body-item">
+        <p class="story-body-item-title">The philosophy</p>
+        <p>We subtract until only the essence remains. Every ZARAVI piece is an exercise in structural reduction. The curve that cannot be simplified further without losing its meaning becomes the curve of a solid 18k gold cuff.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SECTION: CLOSING ════════════════ -->
+<section id="closing">
+  <div class="closing-left">
+    <div>
+      <p class="closing-series">ZARAVI · Series I: Tension · 2026</p>
+      <h2 class="closing-headline">The new<br>architecture.</h2>
+    </div>
+    
+    <div>
+      <div style="width:0.5px; height:56px; background:var(--brown); opacity:0.14; margin-bottom:24px;"></div>
+      <div class="closing-details">
+        <p>ZARAVI High Jewelry</p>
+        <p>18k Solid Gold · Sage Porphyry</p>
+        <p>Series I: Tension · Edition 2026</p>
+        <p>Six pieces · Limited Production</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="closing-right">
+    <div>
+      <p class="closing-contact-label">Private Inquiries &amp; Viewing</p>
+      <div class="closing-contact">
+        <p>zaravi.com</p>
+        <p>studio@zaravi.com</p>
+        <p>Private appointments available in Zurich, Milan, and Dubai</p>
+      </div>
+    </div>
+
+    <div class="closing-divider"></div>
+
+    <div style="display:flex; align-items:center; gap:20px;">
+      <svg viewBox="0 0 160 50" width="120" fill="none" stroke="#3A230A" stroke-width="1.4" stroke-linecap="round" opacity="0.35">
+        <path d="M6 38 Q52 8 108 22 Q138 30 154 14"/>
+      </svg>
+      <p class="spec" style="opacity:0.4;">Metamorphosis<br>in Solid State</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer>
+  <span>ZARAVI JEWELRY</span>
+  <span>Series I: Tension · 2026</span>
+  <span>Metamorphosis in Solid State</span>
+</footer>
+
+<!-- ════════════════ PRODUCT INSPECTOR MODAL ════════════════ -->
+<div id="inspectorBackdrop" class="inspector-backdrop" onclick="handleBackdropClick(event)">
+  <div class="inspector-modal">
+    <button class="modal-close-btn" onclick="closeInspector()">[ ESC / CLOSE ]</button>
+    
+    <div class="modal-visual-side" id="modalVisualStage"></div>
+
+    <div class="modal-spec-side">
+      <div>
+        <p class="spec" id="modalPieceNum">SERIES I · 01</p>
+        <h3 class="modal-title" id="modalPieceName">The Apex Cuff</h3>
+        <p class="spec" id="modalPieceDesc" style="opacity:0.65; line-height:2.1; margin-top:8px;">
+          An open architectural cuff forged in solid 18k gold with hand-brushed satin surface and faceted bevels that catch ambient directional light.
+        </p>
+
+        <div class="modal-meta-table">
+          <div>
+            <p class="meta-item-label">PURITY</p>
+            <p class="meta-item-val" id="modalPurity">18k Yellow Gold (750‰)</p>
+          </div>
+          <div>
+            <p class="meta-item-label">TOTAL WEIGHT</p>
+            <p class="meta-item-val" id="modalWeight">68.4 Grams</p>
+          </div>
+          <div>
+            <p class="meta-item-label">FINISH</p>
+            <p class="meta-item-val" id="modalFinish">Directional Brushed Satin</p>
+          </div>
+          <div>
+            <p class="meta-item-label">EDITION</p>
+            <p class="meta-item-val" id="modalEdition">Limited to 18 Signed Casts</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="spec" style="font-size:7px; opacity:0.35;">HALLMARKS: ZARAVI 18K · 750 ASSAY MARK · SWISS CONTROL STAMP</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ EVOLUTION ARCHIVE DRAWER ════════════════ -->
+<div id="archiveDrawer" class="archive-drawer">
+  <div class="drawer-header">
+    <div>
+      <p class="spec">Brand System Study</p>
+      <h3 style="font-size:24px; font-style:italic; font-weight:300;">Evolution Archive</h3>
+    </div>
+    <button class="modal-close-btn" onclick="toggleArchiveDrawer()">[ CLOSE ]</button>
+  </div>
+
+  <div class="drawer-body">
+    <!-- Card 1: Textile Wing -->
+    <div class="archive-card">
+      <div class="archive-card-img-wrap">
+        <img src="assets/ref-1-textile-wing.jpg" alt="Textile wing reference">
+      </div>
+      <div class="archive-card-meta">
+        <span class="spec">Primary Design Anchor</span>
+        <span class="archive-badge">Reference 04</span>
+      </div>
+      <p class="archive-desc">
+        The textile/fabric wing: here the wing is expressed as <em>material</em> — stitched threads, woven twill, crinkled mulberry ground. This tactile embroidery inspired our hairline vein deboss grid rather than photographic printing.
+      </p>
+    </div>
+
+    <!-- Card 2: Solid Gold on Stone -->
+    <div class="archive-card">
+      <div class="archive-card-img-wrap">
+        <img src="assets/ref-2-gold-jewelry.jpg" alt="Gold cuff and ring on sage stone">
+      </div>
+      <div class="archive-card-meta">
+        <span class="spec">Physical Metallurgy</span>
+        <span class="archive-badge">Reference 02</span>
+      </div>
+      <p class="archive-desc">
+        The physical Apex Cuff and Radial Ring in brushed 18k solid gold resting on genuine sage-green porphyry stone. Note the planar facets and deep "ZARAVI 18K" hallmark.
+      </p>
+    </div>
+
+    <!-- Card 3: Packaging v1 Mockup -->
+    <div class="archive-card">
+      <div class="archive-card-img-wrap">
+        <img src="assets/ref-3-packaging-v1.jpg" alt="Packaging v1 collection">
+      </div>
+      <div class="archive-card-meta">
+        <span class="spec">The Point of Departure</span>
+        <span class="archive-badge">Reference 03 (v1)</span>
+      </div>
+      <p class="archive-desc">
+        The v1 packaging used photographic wing prints as literal surface wallpaper and a symmetrical butterfly logo. In v2, we elevated this into calm monochrome surfaces, blind debossing, and the single asymmetric wing mark.
+      </p>
+    </div>
+
+    <!-- Card 4: Packaging Dielines & Blueprints -->
+    <div class="archive-card">
+      <div class="archive-card-img-wrap">
+        <img src="assets/ref-4-blueprint-dielines.jpg" alt="Packaging dieline blueprints">
+      </div>
+      <div class="archive-card-meta">
+        <span class="spec">Engineering Blueprints</span>
+        <span class="archive-badge">Reference 01</span>
+      </div>
+      <p class="archive-desc">
+        Technical dielines for the friction-fit magnet box, unbleached linen pouch, and shopping tote. Inner lid quote: "YOU ARE A RARE KIND OF BEAUTIFUL".
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ JAVASCRIPT LOGIC ════════════════ -->
+<script>
+const productData = {
+  apex: {
+    num: 'SERIES I · 01',
+    name: 'The Apex Cuff',
+    desc: 'An open architectural cuff forged in solid 18k yellow gold with hand-brushed planar bevels. The inner curve features the micro-engraved ZARAVI hallmark and serial stamp.',
+    purity: '18k Yellow Gold (750‰)',
+    weight: '68.4 Grams',
+    finish: 'Directional Brushed Satin',
+    edition: '18 Casts · Made to Order',
+    svg: `<svg viewBox="0 0 260 200" width="220" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="130" cy="110" rx="98" ry="30" fill="none" stroke="#C6923A" stroke-width="28"/>
+            <ellipse cx="130" cy="110" rx="98" ry="30" fill="none" stroke="#F3DB98" stroke-width="3" opacity="0.55"/>
+            <rect x="114" y="76" width="32" height="68" fill="#8DA28C"/>
+            <rect x="114" y="76" width="2.5" height="68" fill="#3A230A" opacity="0.3"/>
+            <rect x="143.5" y="76" width="2.5" height="68" fill="#3A230A" opacity="0.3"/>
+          </svg>`
+  },
+  radial: {
+    num: 'SERIES I · 02',
+    name: 'The Radial Ring',
+    desc: 'Heavy signet band with planar top facet and subtle micro-etched cellular vein lines, inset with a calibrated raw sage nephrite stone cabochon.',
+    purity: '18k Yellow Gold (750‰)',
+    weight: '42.1 Grams',
+    finish: 'Matte Brushed / Polished Bevel',
+    edition: '24 Casts · Sized to Client',
+    svg: `<svg viewBox="0 0 240 190" width="200" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="120" cy="100" rx="72" ry="24" fill="none" stroke="#C6923A" stroke-width="20"/>
+            <ellipse cx="120" cy="100" rx="72" ry="24" fill="none" stroke="#F3DB98" stroke-width="2.5" opacity="0.5"/>
+            <ellipse cx="120" cy="78" rx="16" ry="8" fill="#7A9279"/>
+            <ellipse cx="120" cy="78" rx="12" ry="5.5" fill="#A3B8A2" opacity="0.8"/>
+          </svg>`
+  },
+  dihedral: {
+    num: 'SERIES I · 03',
+    name: 'The Dihedral Pendant',
+    desc: 'Sculptural pendant formed of two angled gold planes echoing the dihedral angle of butterfly wings in soaring glide, paired with a solid 60cm box chain.',
+    purity: '18k Yellow Gold (750‰)',
+    weight: '18.2 Grams (Excl. Chain)',
+    finish: 'Polished / Micro-Etched Interior',
+    edition: '30 Pieces',
+    svg: `<svg viewBox="0 0 200 220" width="180" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="100,60 144,124 100,150 56,124" fill="#7A9279" stroke="#C6923A" stroke-width="3"/>
+            <line x1="100" y1="60" x2="100" y2="150" stroke="#F3DB98" stroke-width="1.2"/>
+            <ellipse cx="100" cy="106" rx="14" ry="9" fill="#EEE9C1" opacity="0.6"/>
+          </svg>`
+  },
+  chitin: {
+    num: 'SERIES I · 04',
+    name: 'The Chitin Chain',
+    desc: 'Necklace composed of hand-articulated gold links that pivot on hidden stainless pins, mirroring the segmental exoskeleton plates of insect wings.',
+    purity: '18k Yellow Gold (750‰)',
+    weight: '34.8 Grams',
+    finish: 'Brushed Satin with Polished Pins',
+    edition: '15 Pieces · 42cm Length',
+    svg: `<svg viewBox="0 0 240 180" width="200" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="#C6923A" stroke-width="5" stroke-linecap="round">
+              <rect x="25" y="80" width="34" height="22" rx="10"/>
+              <rect x="65" y="80" width="34" height="22" rx="10" transform="rotate(16 82 91)"/>
+              <rect x="105" y="78" width="34" height="22" rx="10"/>
+              <rect x="145" y="80" width="34" height="22" rx="10" transform="rotate(-14 162 91)"/>
+            </g>
+          </svg>`
+  },
+  costal: {
+    num: 'SERIES I · 05',
+    name: 'The Costal Cuff',
+    desc: 'Double parallel cuff structure inspired by the costal margin vein that bears the primary aerodynamic load of the butterfly wing.',
+    purity: '18k Yellow Gold (750‰)',
+    weight: '54.0 Grams',
+    finish: 'Brushed Twin Ribs',
+    edition: '12 Pieces',
+    svg: `<svg viewBox="0 0 240 180" width="200" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="120" cy="80" rx="90" ry="22" fill="none" stroke="#C6923A" stroke-width="11"/>
+            <ellipse cx="120" cy="112" rx="90" ry="22" fill="none" stroke="#C6923A" stroke-width="11"/>
+            <line x1="30" y1="80" x2="30" y2="112" stroke="#C6923A" stroke-width="11"/>
+            <line x1="210" y1="80" x2="210" y2="112" stroke="#C6923A" stroke-width="11"/>
+          </svg>`
+  },
+  venation: {
+    num: 'SERIES I · 06',
+    name: 'The Venation Ear',
+    desc: 'Asymmetric ear studs with microscopic radial ribbing radiating from an off-center axis point, secured by custom tension press-fit backings.',
+    purity: '18k Yellow Gold (750‰)',
+    weight: '6.2 Grams (Pair)',
+    finish: 'Micro-Ribbed / Mirror Bevel',
+    edition: '50 Pairs',
+    svg: `<svg viewBox="0 0 220 180" width="180" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="80" cy="80" r="30" fill="none" stroke="#C6923A" stroke-width="4"/>
+            <path d="M58 70 Q80 50 102 72" fill="none" stroke="#F3DB98" stroke-width="1.2"/>
+            <circle cx="150" cy="95" r="20" fill="none" stroke="#C6923A" stroke-width="3" opacity="0.8"/>
+          </svg>`
+  }
+};
+
+function openInspector(key) {
+  const data = productData[key];
+  if (!data) return;
+  document.getElementById('modalPieceNum').innerText = data.num;
+  document.getElementById('modalPieceName').innerText = data.name;
+  document.getElementById('modalPieceDesc').innerText = data.desc;
+  document.getElementById('modalPurity').innerText = data.purity;
+  document.getElementById('modalWeight').innerText = data.weight;
+  document.getElementById('modalFinish').innerText = data.finish;
+  document.getElementById('modalEdition').innerText = data.edition;
+  document.getElementById('modalVisualStage').innerHTML = data.svg;
+  document.getElementById('inspectorBackdrop').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeInspector() {
+  document.getElementById('inspectorBackdrop').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function handleBackdropClick(e) {
+  if (e.target.id === 'inspectorBackdrop') {
+    closeInspector();
+  }
+}
+
+function toggleArchiveDrawer() {
+  const drawer = document.getElementById('archiveDrawer');
+  drawer.classList.toggle('open');
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeInspector();
+    document.getElementById('archiveDrawer').classList.remove('open');
+  }
+});
+</script>
+
+</body>
+</html>

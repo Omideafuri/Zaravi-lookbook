@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="594mm" height="420mm" viewBox="0 0 594 420">
+<defs><style><![CDATA[
+text{font-family:Arial,sans-serif;fill:#3A230A}.title{font-family:Georgia,serif;font-size:12px;letter-spacing:2px}.h{font-size:6px;font-weight:700;letter-spacing:.5px}.t{font-size:4.1px}.micro{font-size:3.4px}.cut{fill:none;stroke:#E1261C;stroke-width:.25}.crease{fill:none;stroke:#00AEEF;stroke-width:.22;stroke-dasharray:3 2}.safe{fill:none;stroke:#EC008C;stroke-width:.18;stroke-dasharray:1.5 1.5}.glue{fill:#86A387;fill-opacity:.18;stroke:#638064;stroke-width:.18}.dim{fill:none;stroke:#6A6257;stroke-width:.16;marker-start:url(#a);marker-end:url(#a)}.board{fill:#EEE9C1;stroke:#3A230A;stroke-width:.18}.note{fill:#F4F0D8;stroke:#8DA28C;stroke-width:.2}.foldlabel{font-size:3.4px;fill:#00759A}.cutlabel{font-size:3.4px;fill:#B51F16}
+]]></style><marker id="a" viewBox="0 0 6 6" refX="3" refY="3" markerWidth="4" markerHeight="4" orient="auto"><path d="M6 0L0 3l6 3" fill="none" stroke="#6A6257" stroke-width=".8"/></marker></defs>
+<rect width="594" height="420" fill="#F8F5E7"/>
+<text x="24" y="25" class="title">ZARAVI / RING ARCHIVE BOX</text><text x="24" y="34" class="h">FINISHED OUTER SIZE 72 × 72 × 54 MM · DRAWER WITH FOUR-PANEL SLEEVE · REV A · SCALE 1:1</text>
+<!-- legend --> <line x1="410" y1="24" x2="428" y2="24" class="cut"/><text x="432" y="25.5" class="micro">CUT / KNIFE</text><line x1="474" y1="24" x2="492" y2="24" class="crease"/><text x="496" y="25.5" class="micro">CREASE / V-GROOVE</text><line x1="410" y1="33" x2="428" y2="33" class="safe"/><text x="432" y="34.5" class="micro">3 MM BLEED / ART LIMIT</text><rect x="474" y="30" width="18" height="6" class="glue"/><text x="496" y="34.5" class="micro">GLUE</text>
+<!-- sleeve -->
+<text x="24" y="53" class="h">A · OUTER SLEEVE STRUCTURAL BLANK</text><text x="24" y="60" class="t">1.2 mm FSC compact board, V-grooved to 0.25 mm residual; wrap separately in 120 gsm dyed-through Mineral Sage paper.</text>
+<rect x="21" y="66" width="270" height="78" rx="1" class="safe"/>
+<path d="M24 69H288V141H24Z" class="cut"/>
+<rect x="24" y="69" width="12" height="72" class="glue"/>
+<path d="M36 69V141M108 69V141M162 69V141M234 69V141" class="crease"/>
+<text x="28" y="106" class="micro" transform="rotate(-90 28 106)">12 GLUE</text><text x="70" y="106" class="t" text-anchor="middle">BOTTOM 72</text><text x="135" y="106" class="t" text-anchor="middle">SIDE 54</text><text x="198" y="106" class="t" text-anchor="middle">TOP 72</text><text x="261" y="106" class="t" text-anchor="middle">SIDE 54</text>
+<line x1="24" y1="151" x2="288" y2="151" class="dim"/><text x="156" y="148.5" class="micro" text-anchor="middle">264.0</text><line x1="298" y1="69" x2="298" y2="141" class="dim"/><text x="302" y="106" class="micro" transform="rotate(90 302 106)" text-anchor="middle">72.0</text>
+<!-- wrap -->
+<text x="324" y="53" class="h">B · SLEEVE PAPER WRAP</text><text x="324" y="60" class="t">Add 15 mm turn-in at open ends, 10 mm overlap at seam, grain parallel to 72 mm drawer travel.</text>
+<path d="M324 66H588V168H324Z" class="cut"/><path d="M324 81H588M324 153H588" class="crease"/><path d="M336 66V168M408 66V168M462 66V168M534 66V168" class="crease"/><path d="M321 63H591V171H321Z" class="safe"/><text x="456" y="77" class="micro" text-anchor="middle">15 MM TURN-IN</text><text x="456" y="164" class="micro" text-anchor="middle">15 MM TURN-IN</text>
+<!-- drawer tray folding net -->
+<text x="24" y="186" class="h">C · INNER DRAWER TRAY NET</text><text x="24" y="193" class="t">400 gsm SBS, 0.55 mm nominal caliper, double-wall rolled rim; finished external target 69.6 × 70.0 × 51.4 mm.</text>
+<!-- simplified cross with 14mm corner glue tabs -->
+<path class="cut" d="M75 256H89V205H158.2V256H172.2V307.2H158.2V358.2H89V307.2H75ZM89 256H37.8V307.2H89M158.2 256H209.4V307.2H158.2"/>
+<!-- tab shaping cuts --> <path class="cut" d="M75 256l14 8M75 307.2l14-8M172.2 256l-14 8M172.2 307.2l-14-8"/>
+<path class="crease" d="M89 256H158.2M89 307.2H158.2M89 256V307.2M158.2 256V307.2M89 205V256M158.2 205V256M89 307.2V358.2M158.2 307.2V358.2"/>
+<rect x="75" y="256" width="14" height="51.2" class="glue"/><rect x="158.2" y="256" width="14" height="51.2" class="glue"/>
+<text x="123.6" y="283" class="t" text-anchor="middle">BASE 69.2 × 51.2</text><text x="123.6" y="232" class="t" text-anchor="middle">REAR WALL</text><text x="123.6" y="336" class="t" text-anchor="middle">FRONT WALL</text><text x="63" y="283" class="t" text-anchor="middle" transform="rotate(-90 63 283)">SIDE WALL</text><text x="184" y="283" class="t" text-anchor="middle" transform="rotate(90 184 283)">SIDE WALL</text>
+<!-- insert -->
+<text x="248" y="186" class="h">D · JEWELRY INSERT</text><text x="248" y="193" class="t">Die-cut 1.0 mm molded fiber board, laminated with 0.6 mm plant suede. Friction fit, no exposed foam.</text>
+<rect x="248" y="205" width="67.8" height="49.8" rx="2" class="cut"/><path d="M274 226c7-7 16-7 23 0M274 234c7 7 16 7 23 0" class="cut"/><text x="281.9" y="265" class="micro" text-anchor="middle">67.8 × 49.8 · R2 CORNERS · 22 MM RING SLOT</text>
+<!-- artwork -->
+<text x="348" y="186" class="h">E · ARTWORK ZONES</text><rect x="348" y="205" width="72" height="54" class="board"/><text x="384" y="231" class="title" text-anchor="middle" font-size="7">ZARAVI</text><path d="M356 251C370 224 388 214 412 210M356 251C376 242 396 226 412 210" fill="none" stroke="#8DA28C" stroke-width=".25"/><text x="384" y="269" class="micro" text-anchor="middle">TOP PANEL · WORDMARK 23 MM WIDE · BLIND DEBOSS 0.3 MM</text>
+<!-- notes -->
+<rect x="348" y="288" width="222" height="92" class="note"/><text x="358" y="302" class="h">MANUFACTURING NOTES</text><text x="358" y="313" class="t">1. Prototype before tooling. Maintain 0.8 to 1.0 mm drawer running clearance after wrap build-up.</text><text x="358" y="322" class="t">2. Compact board grain runs with drawer travel. Use 90° V-grooves; no crushed-score ridges on visible faces.</text><text x="358" y="331" class="t">3. Wrap adhesive: pH-neutral PVA, full coverage, low moisture. Turn-in sequence: long edges, then open ends.</text><text x="358" y="340" class="t">4. Copper pull: 10 mm cotton herringbone, 28 mm exposed loop; anchor between board and wrap over 35 mm.</text><text x="358" y="349" class="t">5. Color target: Mineral Sage #8DA28C, ΔE00 ≤ 2 under D50. Interior Warm Ivory #EEE9C1.</text><text x="358" y="358" class="t">6. Deboss only, no metallic foil. Minimum vein rule 0.25 mm; keep 5 mm from wrapped edges.</text><text x="358" y="367" class="t">7. QC: lid squareness ±0.5 mm, wrap registration ±0.6 mm, drawer pull 0.8 to 1.5 N.</text>
+<!-- title block -->
+<rect x="24" y="386" width="546" height="22" fill="#3A230A"/><text x="31" y="396" fill="#EEE9C1" class="h">ZARAVI PACKAGING ENGINEERING</text><text x="31" y="403" fill="#EEE9C1" class="micro">RING BOX · 72 × 72 × 54 MM · REV A · UNITS MM · SCALE 1:1 AT 100% · DO NOT FIT TO PAGE</text><text x="561" y="399" fill="#EEE9C1" class="h" text-anchor="end">03 SEP 2026</text>
+</svg>
